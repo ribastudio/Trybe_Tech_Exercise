@@ -6,4 +6,4 @@
 
 I don't know, in this moment
 
-[Know more about Trybe] (https://www.trybe.com.br)
+[Know more about Trybe] (https://www.betrybe.com/)
