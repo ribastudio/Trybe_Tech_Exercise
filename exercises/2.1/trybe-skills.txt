@@ -3,6 +3,10 @@ O que eu vou aprender na Trybe:
 - Unix
 - Bash-
 - Git
+- React
+- React-Native
+- Flutter
+- PHP
 - GitLab
 - HTML
 - CSS & SASS e LESS
