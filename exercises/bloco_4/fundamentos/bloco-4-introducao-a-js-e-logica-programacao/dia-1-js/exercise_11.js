@@ -27,11 +27,49 @@
 // Resultado: R$ 2.612,55.
 // Dica: que tal identificar as alíquotas com variáveis de nomes explicativos? 
 
-let salary = 1500.10;
+let salary = 4500.10;
+let irParcel;
+let irPer;
+let aliquoteINSS;
 
+// verificação do INSS
+if (salary <= 1556.94) {
+  aliquoteINSS = salary * 0.08;
+
+} else if (salary <= 2594.92) {
+  aliquoteINSS =  salary * 0.09;
+
+} else if (salary <= 5189.82) {
+  aliquoteINSS =  salary * 0.11;
+
+} else if (salary > 5189.82) {
+  aliquoteINSS = salary + 570.88;
+}
+
+let baseSalary = salary - aliquoteINSS;
+// Dedução de IR
+if (baseSalary <= 1903.98) {
+  irPer = 0;
+  irParcel = 0;
+  console.log('Insento de Imposto de renda');
+} else if (baseSalary <= 2826.65) {
+  irPer = 0.075;
+  irParcel = 142.80;
+} else if (baseSalary <= 3751.05) {
+  irPer = 0.15;
+  irParcel = 354.80;
+} else if (baseSalary <= 4664.68){
+  irPer = 0.225;
+  irParcel = 636.13;
+} else if (baseSalary > 4664.68){
+  irPer = 0.275;
+  irParcel = 869.36;
+}
+
+let irValue = (irPer * baseSalary) - irParcel;
+let liquidSalary = baseSalary - irValue;
 
 // Retirado do site https://www.blogson.com.br/formatar-moeda-dinheiro-com-javascript-do-jeito-facil/
+let brlValue = liquidSalary.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-var valorFormatado = salary.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-console.log(valorFormatado);
+console.log('Seu salário liquido é ' + brlValue);
