@@ -9,37 +9,46 @@
 </head>
 <body>
   <h1>Formulário</h1>
-  <form action="" method="get">
-  <fieldset>
-      <label for="name-box">Nome</label>
-        <input type="text" name="name-box" id="" placeholder="Digite seu email" required autocomplete="off" autofocus>
-      <label for="email-box">email</label>
-        <input type="text" name="email-box" id="" placeholder="Digite sua senha" required>
-      <input type="text" name="" id="">
-      <input type="text" name="" id="">
-      <input type="text" name="" id="">
-      <select name="state" id="state-select"></select>
-      <label for="type">
-        <input type="radio" name="type" id=""></label>
-  </fieldset>
-  <fieldset>
-      <label for="">
-        <textarea name="" id="" cols="30" rows="10"></textarea></label>
-      <label for="">
-        <input type="text" name="" id=""></label>
-      <label for="initial-data">
-        <input type="text" name="initial-data" id=""></label>
-      <br>
-  </fieldset>
-  </form>
-  <div id="receive-data">
-
-  </div>
-  <section>
-    <button type="submit">Clique aqui para enviar</button>
-    <button></button>
-    <button>Limpar</button>
-  </section>
+  <main class="container">
+    <form action="" method="get" enctype="multipart/form-data" id="formy">
+    <fieldset>
+        <label for="name-box">Nome
+          <input type="text" name="name-box" id="" placeholder="Digite seu nome" required autocomplete="off" autofocus></label>
+        <label for="email-box">email</label>
+          <input type="email" name="email-box" id="" maxlength="50" placeholder="Digite seu email" required>
+        <!-- pattern para cpf ou cnpj https://gist.github.com/marcoscastro/7887900ceebe9e223dce -->
+          <label for="cpf-field">CPF
+          <input type="text" name="cpf-field" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" maxlength="11" id="" placeholder="Digite somente os números do CPF" required></label>
+        <label for="end-field">Seu endereço
+          <input type="text" name="end-field" id=""  maxlength="200" placeholder="Digite seu endereço" required></label>
+        <label for="city">Cidade
+          <input type="text" name="city" maxlength="28" id="city-field" placeholder="Digite sua cidadel" required></label>
+        <label for="state">Estado
+          <select name="state" id="state-opt" required></select></label>
+        <label for="type">Tipo de Residência
+          <input type="radio" name="type" id="">Apartamento
+          <input type="radio" name="type" id="">Casa</label>
+        
+    </fieldset>
+    <fieldset>
+        <label for="resume-text">Resumo do currículo
+          <textarea name="resume-text" maxlength="1000" cols="30" rows="10" id="resume-text-area"></textarea></label>
+        <label for="position-job">Cargo
+          <input type="text" name="position-job" maxlength="40" id="position-job"></label>
+        <label for="description-job">Descrição do cargo
+          <input type="text" name="description-job" maxlength="500" id="description-job"></label>
+        <label for="initial-data">Data Inicial
+          <input type="text" name="initial-data" placeholder="xx/xx/xxxx" pattern="\d{1,2}/\d{1,2}/\d{4}" id="input-date" ></label>
+        <br>
+    </fieldset>
+    </form>
+    <div id="receive-data">
+    </div>
+    <section>
+      <button id="btnSubmit" type="submit">Clique aqui para enviar</button>
+      <button type="reset" id="btnClean">Limpar</button>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
